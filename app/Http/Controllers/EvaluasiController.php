@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Exports\EvaluasiExport;
-use App\Models\evaluasi;
+use App\Models\Evaluasi;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
 
