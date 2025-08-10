@@ -25,7 +25,7 @@ $(document).ready(function () {
                 });
                 setTimeout(() => {
                     window.location.href =
-                        "http://localhost:8000/evaluasi/berhasil";
+                        "https://spkevaluasitutorpkbmronaa.site/evaluasi/berhasil";
                 }, 3000);
             },
             error: function (response) {
