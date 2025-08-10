@@ -54,3 +54,9 @@ Route::middleware(['auth', 'checkRole:kepala'])->group(function () {
 Route::get('/export/evaluasi', [EvaluasiController::class, 'export'])->name('admin.export.evaluasi')->middleware('auth');
 
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
+Route::get('/clear-cache', function () {
+    Artisan::call('config:clear');
+    Artisan::call('cache:clear');
+    return 'Cache cleared!';
+});
