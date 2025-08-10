@@ -18,7 +18,7 @@
     <!-- Basic Bootstrap Table -->
     <div class="card">
         <div class="card-header d-flex justify-content-between">
-            <h5>Table Warga Belajar</h5>
+            <h5>Pengguna Terdaftar</h5>
             <div>
                 <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#create-user">Tambah</button>
             </div>

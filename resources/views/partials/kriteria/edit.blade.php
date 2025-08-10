@@ -31,6 +31,15 @@
                                          placeholder="Masukan Deskripsi" />
                                  </div>
                              </div>
+                             <div class="row">
+                             <div class="col mb-0">
+                                <label for="jenis" class="form-label">Jenis Kriteria</label>
+                                <select id="jenis" name="jenis" class="form-control">
+                                    <option value="benefit">Benefit</option>
+                                    <option value="cost">Cost</option>
+                                </select>
+                             </div>
+                             </div>
                          </div>
                          <div class="modal-footer">
                              <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal">

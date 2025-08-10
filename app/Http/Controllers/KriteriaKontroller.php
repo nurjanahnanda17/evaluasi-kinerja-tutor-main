@@ -25,13 +25,15 @@ class KriteriaKontroller extends Controller
         $request->validate([
             'nama_kriteria' => 'required',
             'deskripsi' => 'required',
-            'bobot' => 'required'
+            'bobot' => 'required',
+            'jenis' => 'required|in:benefit,cost'
         ]);
 
         Kriteria::create([
             'nama_kriteria' => $request->nama_kriteria,
             'deskripsi' => $request->deskripsi,
-            'bobot' => $request->bobot
+            'bobot' => $request->bobot,
+            'jenis' => $request->jenis
         ]);
 
         return response()->json(['message' => 'Kriteria berhasil dibuat'], 201);
@@ -44,13 +46,15 @@ class KriteriaKontroller extends Controller
         $request->validate([
             'nama_kriteria' => 'required',
             'deskripsi' => 'required',
-            'bobot' => 'required'
+            'bobot' => 'required',
+            'jenis' => 'required|in:benefit,cost'
         ]);
 
         $data->update([
             'nama_kriteria' => $request->nama_kriteria,
             'deskripsi' => $request->deskripsi,
             'bobot' => $request->bobot,
+            'jenis' => $request->jenis
         ]);
 
         return response()->json(['message' => 'Kriteria Berhasil diperbarui'], 200);

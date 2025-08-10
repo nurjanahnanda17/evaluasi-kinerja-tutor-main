@@ -10,7 +10,7 @@ class Kriteria extends Model
     protected $primaryKey = 'id_kriteria';
     protected $table = 'kriteria';
 
-    protected $fillable = ['id_kriteria', 'nama_kriteria', 'deskripsi', 'bobot'];
+    protected $fillable = ['id_kriteria', 'nama_kriteria', 'deskripsi', 'bobot', 'jenis'];
 
     public function evaluasiDetail()
     {

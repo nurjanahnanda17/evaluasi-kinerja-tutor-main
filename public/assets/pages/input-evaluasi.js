@@ -25,7 +25,7 @@ $(document).ready(function () {
                 });
                 setTimeout(() => {
                     window.location.href =
-                        "http://evaluasi-kinerja-tutor-main.test/evaluasi/berhasil";
+                        "http://localhost:8000/evaluasi/berhasil";
                 }, 3000);
             },
             error: function (response) {

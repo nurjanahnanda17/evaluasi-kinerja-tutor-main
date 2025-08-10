@@ -37,6 +37,7 @@
                         <th>Nama Kriteria</th>
                         <th>Deskripsi</th>
                         <th>Bobot</th>
+                        <th>Jenis Kriteria</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -46,6 +47,7 @@
                             <td>{{ $k->nama_kriteria }}</td>
                             <td>{{ $k->deskripsi }}</td>
                             <td>{{ $k->bobot }}</td>
+                            <td>{{ ucfirst($k->jenis) }}</td>
                             <td>
                                 <div>
                                     <a href="javascript:void(0)" data-id="{{ $k->id_kriteria }}"

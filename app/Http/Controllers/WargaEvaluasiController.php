@@ -22,30 +22,35 @@ class WargaEvaluasiController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'id_tutor' => 'required',
-            'nilai' => 'required|array',
+        'id_tutor' => 'required',
+        'nilai' => 'required|array',
         ]);
 
         $total = 1;
         foreach ($request->nilai as $id_kriteria => $nilai) {
-            $bobot = Kriteria::find($id_kriteria)?->bobot ?? 0;
-            $total *= pow($nilai, $bobot/100);
+            $kriteria = Kriteria::find($id_kriteria);
+            $bobot = $kriteria->bobot ?? 0;
+            $jenis = $kriteria->jenis ?? 'benefit';
+
+            // Pakai bobot negatif jika jenisnya cost
+            $pangkat = $jenis === 'cost' ? -($bobot / 100) : $bobot / 100;
+
+            $total *= pow($nilai, $pangkat);
         }
 
-        $evaluasi = Evaluasi::create([
-            'id_user' => Auth::user()->id_user,
-            'id_tutor' => $request->id_tutor,
-            'total_nilai' => $total,
+    $evaluasi = Evaluasi::create([
+        'id_user' => Auth::user()->id_user,
+        'id_tutor' => $request->id_tutor,
+        'total_nilai' => $total,
         ]);
 
-        foreach ($request->nilai as $id_kriteria => $nilai) {
-            EvaluasiDetail::create([
-                'id_evaluasi' => $evaluasi->id_evaluasi,
-                'id_kriteria' => $id_kriteria,
-                'nilai' => $nilai,
-            ]);
+    foreach ($request->nilai as $id_kriteria => $nilai) {
+        EvaluasiDetail::create([
+            'id_evaluasi' => $evaluasi->id_evaluasi,
+            'id_kriteria' => $id_kriteria,
+            'nilai' => $nilai,
+        ]);
         }
-
         return response()->json(['message' => 'Evaluasi berhasil'], 201);
     }
 }

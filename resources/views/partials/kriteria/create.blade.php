@@ -26,8 +26,17 @@
                                  <div class="col mb-0">
                                      <label for="bobot" class="form-label">Bobot</label>
                                      <input type="number" id="bobot" name="bobot" class="form-control"
-                                         placeholder="Masukan Deskripsi" />
+                                         placeholder="Masukan Bobot" />
                                  </div>
+                             </div>
+                             <div class="row">
+                             <div class="col mb-0">
+                                <label for="jenis" class="form-label">Jenis Kriteria</label>
+                                <select id="jenis" name="jenis" class="form-control">
+                                    <option value="benefit">Benefit</option>
+                                    <option value="cost">Cost</option>
+                                </select>
+                             </div>
                              </div>
                          </div>
                          <div class="modal-footer">

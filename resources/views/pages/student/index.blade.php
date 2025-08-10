@@ -35,22 +35,22 @@
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" type="radio" name="nilai[{{ $k->id_kriteria }}]"
                                 value="1" required>
-                            <label class="form-check-label">Kurang</label>
+                            <label class="form-check-label">1 (Kurang)</label>
                         </div>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" type="radio" name="nilai[{{ $k->id_kriteria }}]"
                                 value="2">
-                            <label class="form-check-label">Cukup</label>
+                            <label class="form-check-label">2 (Cukup)</label>
                         </div>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" type="radio" name="nilai[{{ $k->id_kriteria }}]"
                                 value="3">
-                            <label class="form-check-label">Baik</label>
+                            <label class="form-check-label">3 (Baik)</label>
                         </div>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" type="radio" name="nilai[{{ $k->id_kriteria }}]"
                                 value="4">
-                            <label class="form-check-label">Sangat Baik</label>
+                            <label class="form-check-label">4 (Sangat Baik)</label>
                         </div>
                     </div>
                 @endforeach
